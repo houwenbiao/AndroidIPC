@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jackhou.androidipc">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".binderipc.BinderActivity" />
+
+        <activity android:name=".aidl.AidlActivity" />
+
+        <activity android:name=".aidl.BookActivity" />
+
+        <service
+            android:name=".TestService"
+            android:process="com.jackhou.androidipc.aidl.test" />
+
+        <service
+            android:name=".aidl.BookManagerService"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <service
+            android:name=".binderipc.BinderService"
+            android:process="com.jackhou.androidipc.binder.service" />
+
+        <service
+            android:name=".aidl.AidlService"
+            android:process="com.jackhou.androidipc.aidl.service" />
+    </application>
+
+</manifest>
